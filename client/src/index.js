@@ -1,7 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+class Home extends React.Component {
 
+  constructor(props) {
+      super(props)
+      this.state = {
+          checked: false
+      }
+      this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange (e) {
+      this.setState({
+          name: Array.from(e.target.selectedOptions).map(o => o.value) 
+      })
+  }
+
+  render () {
+      return <div>
+              <div>
+                <label htmlFor="name">Nom</label>
+              </div>
+      </div>
+  }
+
+}
 
 ReactDOM.render(<Home/>, document.querySelector('#root'))
 
